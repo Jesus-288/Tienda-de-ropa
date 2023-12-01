@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Pedidos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+      .form-container {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .bg{
+            background-color: rgb(76, 158, 158);
+        }
+        .type{
+            font-family:Bradley Hand cursive;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg fw-bold">
+        <img src="\Proyecto\img\logo.jpeg" alt="logo" width="100" height="100">
+        <h2 class="type">¡¡Estilo al Triple!!</h2>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link btn btn-outline-dark" href="acceder.html">Acceder</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    <br>
+    <div class="container">
+        <h1 class="text-center mt-5">Formulario de Pedidos</h1>
+        <form id="orderForm">
+            <div class="form-group">
+                <label for="orderID">PedidoID</label>
+                <input type="text" class="form-control" id="orderID" placeholder="PedidoID">
+            </div>
+            <div class="form-group">
+                <label for="clientID">ClienteID</label>
+                <input type="text" class="form-control" id="clientID" placeholder="ClienteID">
+            </div>
+            <div class="form-group">
+                <label for="orderDate">FechaPedido</label>
+                <input type="date" class="form-control" id="orderDate">
+            </div>
+            <div class="form-group">
+                <label for="total">Total</label>
+                <input type="text" class="form-control" id="total" placeholder="Total">
+            </div>
+            <div class="form-group">
+                <label for="status">Estado</label>
+                <select class="form-control" id="status">
+                    <option>Seleccione</option>
+                    <option>Enviado</option>
+                    <option>Entregado</option>
+                    <option>Cancelado</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="paymentMethod">MétodoPago</label>
+                <select class="form-control" id="paymentMethod">
+                    <option>Seleccione</option>
+                    <option>Efectivo</option>
+                    <option>Tarjeta</option>
+                    <option>Transferencia</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="shippingAddress">DirecciónEnvio</label>
+                <input type="text" class="form-control" id="shippingAddress" placeholder="DirecciónEnvio">
+            </div>
+            <div class="form-group">
+                <label for="shippingCity">CiudadEnvio</label>
+                <input type="text" class="form-control" id="shippingCity" placeholder="CiudadEnvio">
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('orderForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    console.log('PedidoID:', document.getElementById('orderID').value);
+    console.log('ClienteID:', document.getElementById('clientID').value);
+    console.log('FechaPedido:', document.getElementById('orderDate').value);
+    console.log('Total:', document.getElementById('total').value);
+    console.log('Estado:', document.getElementById('status').value);
+    console.log('MétodoPago:', document.getElementById('paymentMethod').value);
+    console.log('DirecciónEnvio:', document.getElementById('shippingAddress').value);
+    console.log('CiudadEnvio:', document.getElementById('shippingCity').value);
+});
+    </script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
